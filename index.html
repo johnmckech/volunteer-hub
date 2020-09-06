@@ -12,10 +12,26 @@
     <h2> UN - Volunteer Online</h2>
     <p>Volunteer Login</p><input type="text">
     <button>Login</button><button>Register</button>
-    
+    <form action="/route" method="POST" id="languageForm">
+        <h5>Languages</h5>
+        <label for="English">English</label>
+        <input type="checkbox" name="english" id="english"/>
+        <br/>
+        <label for="Spanish">Spanish</label>
+        <input type="checkbox" name="spanish" id="spanish"/>
+        <br/>
+        <label for="Chinese">Chinese</label>
+        <input type="checkbox" name="chinese" id="chinese"/>
+        <br/>
+        <label for="French">French</label>
+        <input type="checkbox" name="french" id="french"/>
+        <br/>
+        <input type="submit" id="submit">
+    </form>
 
-    br><a href ="admin.html">Admin</a>
+    <br><a href ="admin.html">Admin</a>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="frontend.js"></script>
 </body>
 
-<
 </html>
