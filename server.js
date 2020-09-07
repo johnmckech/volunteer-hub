@@ -1,3 +1,4 @@
+
 const express = require('express');
 const db = require('./db/database');
 const inputCheck = require('./utils/inputCheck');
@@ -6,6 +7,17 @@ const htmlRoutes = require('./routes/htmlRoutes');
 
 const PORT = process.env.PORT || 3030;
 const app = express();
+
+app.get('/', function (req, res) {
+  res.send('Hello World')
+})
+
+app.post('/',function(req,res){
+    var mainReq = req.body
+    console.log({mainReq})
+})
+ 
+app.listen(3000)
 
 // Express middleware
 app.use(express.urlencoded({ extended: false }));
@@ -23,3 +35,4 @@ db.on('open', () => {
         console.log(`Server running on port ${PORT}`);
     });
 });
+
