@@ -1,8 +1,12 @@
+/*
 DROP DATABASE IF EXISTS volunteers;
 DROP DATABASE IF EXISTS opportunities;
+*/
+DROP DATABASE IF EXISTS volunteerHub;
 
 CREATE DATABASE volunteerHub;
 
+/*
 USE volunteerHub;
 
 CREATE TABLE volunteers
@@ -30,3 +34,4 @@ CREATE TABLE opportunities
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP
   description TEXT
 );
+*/
