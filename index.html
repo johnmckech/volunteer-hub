@@ -28,7 +28,20 @@
         <br/>
         <input type="submit" id="submit">
     </form>
-
+  
+<form action="/login" method="post">
+        <div>
+            <label>Username:</label>
+            <input type="text" name="username"/>
+        </div>
+        <div>
+            <label>Password:</label>
+            <input type="password" name="password"/>
+        </div>
+        <div>
+            <input type="submit" value="Log In"/>
+        </div>
+    </form>
     <form action="/route" method="POST" id="languageForm">
         <h5>Technical Knowledge</h5>
         <label for="Facebook">Social Media</label>
@@ -55,5 +68,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="frontend.js"></script>
 </body>
+
 
 </html>
