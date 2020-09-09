@@ -2,13 +2,17 @@
   "name": "volunteer-hub",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+
+  "main": "frontend.js",
+ 
+
   "scripts": {
     "test": "jest",
     "migrate": "mysql2 db/volunteerHub.db < db/schema.sql",
     "seed": "mysql2 db/volunteerHub.db <db/seed.sql",
     "db": "mysql2 db/volunteerHub.db",
     "start": "node server.js"
+
   },
   "repository": {
     "type": "git",
@@ -28,5 +32,6 @@
     "inquirer": "^7.3.3",
     "mysql2": "^2.1.0",
     "sequelize": "^6.3.5"
+
   }
 }

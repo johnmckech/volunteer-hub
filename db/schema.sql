@@ -2,9 +2,9 @@
 DROP DATABASE IF EXISTS volunteers;
 DROP DATABASE IF EXISTS opportunities;
 */
-DROP DATABASE IF EXISTS volunteerHub;
+DROP DATABASE IF EXISTS volunteer_hub_db;
 
-CREATE DATABASE volunteerHub;
+CREATE DATABASE volunteer_hub_db;
 
 /*
 USE volunteerHub;
