@@ -10,7 +10,12 @@ const User = require('./models/user.js')
 
 passport.use(new LocalStrategy(
   function(username, password, done) {
-    User.findOne({ username: username }).then(user => {
+    User.findOne(
+      {
+        where: {
+           username: username 
+        }
+      }).then(user => {
       if (!user) {
         return done(null, false, { message: 'Incorrect username.' });
       }
@@ -22,6 +27,15 @@ passport.use(new LocalStrategy(
     }).catch(err => done(err));
   }
 ));
+
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function(user, done) {
+    done(null, user);
+});
+
 app.use(express.json());
 // app.use(express.urlencoded({ extended: false }));
 // app.use(require('./routes/login'));
