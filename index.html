@@ -3,10 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Volunteer Hub</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 <body>
-    <form action="/login" method="post">
+    <h1>Volunteer Hub</h1>
+    <h2> UN - Volunteer Online</h2>
+    <p>Volunteer Login</p><input type="text">
+    <button>Login</button><button>Register</button>
+    <form action="/route" method="POST" id="languageForm">
+        <h5>Languages</h5>
+        <label for="English">English</label>
+        <input type="checkbox" name="english" id="english"/>
+        <br/>
+        <label for="Spanish">Spanish</label>
+        <input type="checkbox" name="spanish" id="spanish"/>
+        <br/>
+        <label for="Chinese">Chinese</label>
+        <input type="checkbox" name="chinese" id="chinese"/>
+        <br/>
+        <label for="French">French</label>
+        <input type="checkbox" name="french" id="french"/>
+        <br/>
+        <input type="submit" id="submit">
+    </form>
+  
+<form action="/login" method="post">
         <div>
             <label>Username:</label>
             <input type="text" name="username"/>
@@ -19,5 +42,32 @@
             <input type="submit" value="Log In"/>
         </div>
     </form>
+    <form action="/route" method="POST" id="languageForm">
+        <h5>Technical Knowledge</h5>
+        <label for="Facebook">Social Media</label>
+        <input type="checkbox" name="facebook" id="facebook"/>
+        <br/>
+        <label for="Microsoft">Microsoft Office</label>
+        <input type="checkbox" name="microsoft" id="microsoft"/>
+        <br/>
+        <input type="submit" id="techSubmit">
+    </form>
+
+    <form action="/route" method="POST" id="languageForm">
+        <h5>Special Knowledge</h5>
+        <label for="Grant Writing">Grant Writing</label>
+        <input type="checkbox" name="grant" id="grant"/>
+        <br/>
+        <label for="Web">Web Development</label>
+        <input type="checkbox" name="webDev" id="webDev"/>
+        <br/>
+        <input type="submit" id="skSubmit">
+    </form>
+
+    <br><a href ="admin.html">Admin</a>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="frontend.js"></script>
 </body>
+
+
 </html>
