@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../../db/database');
+const db = require('../../config/connection');
 const inputCheck = require('../../utils/inputCheck');
 
 // Get all opportunities
@@ -67,8 +67,7 @@ router.put('/opportunity/:id', (req, res) => {
         res.status(400).json({ error: errors });
         return;
     }
-    //how to do multiple edit queries in sql?
-    const sql = 
+    //how to do multiple edit queries in sql? 
     const params = [req.body.party_id, req.params.id];
 
     db.run(sql, params, function (err, result) {
