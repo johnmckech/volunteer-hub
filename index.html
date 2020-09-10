@@ -10,9 +10,12 @@
 <body>
     <h1>Volunteer Hub</h1>
     <h2> UN - Volunteer Online</h2>
-    <p>Volunteer Login</p><input type="text">
-    <button>Login</button><button>Register</button>
-    <form action="/route" method="POST" id="languageForm">
+    <div class="volunteerInfo" class="flex-row"></div>
+    <span>Volunteer Login </span><input type="text"><span>  Password </span><input type="text">
+    <br><button id="login">Login</button><button id="register">Register</button>
+    <div id="registerInfo" style="display:none;">
+        <form action="/route" method="POST" id="volunteerForm">
+            <div class = "form-group" id="languageForm">
         <h5>Languages</h5>
         <label for="English">English</label>
         <input type="checkbox" name="english" id="english"/>
@@ -25,6 +28,11 @@
         <br/>
         <label for="French">French</label>
         <input type="checkbox" name="french" id="french"/>
+
+        <br/></div>
+    
+        <div class = "form-group" id="technicalForm">
+
         <br/>
         <input type="submit" id="submit">
     </form>
@@ -49,11 +57,9 @@
         <br/>
         <label for="Microsoft">Microsoft Office</label>
         <input type="checkbox" name="microsoft" id="microsoft"/>
-        <br/>
-        <input type="submit" id="techSubmit">
-    </form>
-
-    <form action="/route" method="POST" id="languageForm">
+        <br/></div>
+        
+        <div class = "form-group" id="knowledgeForm">
         <h5>Special Knowledge</h5>
         <label for="Grant Writing">Grant Writing</label>
         <input type="checkbox" name="grant" id="grant"/>
@@ -61,12 +67,15 @@
         <label for="Web">Web Development</label>
         <input type="checkbox" name="webDev" id="webDev"/>
         <br/>
-        <input type="submit" id="skSubmit">
+        <input type="submit" id="Submit">
+    </div>
     </form>
+</div>
 
     <br><a href ="admin.html">Admin</a>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="frontend.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 
