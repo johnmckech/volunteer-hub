@@ -11,41 +11,43 @@
     <h1>Volunteer Hub</h1>
     <h2> UN - Volunteer Online</h2>
     <p>Volunteer Login</p><input type="text">
-    <button>Login</button><button>Register</button>
-    <form action="/route" method="POST" id="languageForm">
+    <button class="btn">Login</button><button class="btn">Register</button>
+</br>
+    <form action="/route" method="POST" id="languageForm" class="container">
         <h5>Languages</h5>
-        <label for="English">English</label>
+        <label for="English" class="options">English</label>
         <input type="checkbox" name="english" id="english"/>
         <br/>
-        <label for="Spanish">Spanish</label>
+        <label for="Spanish" class="options">Spanish</label>
         <input type="checkbox" name="spanish" id="spanish"/>
         <br/>
-        <label for="Chinese">Chinese</label>
+        <label for="Chinese" class="options">Chinese</label>
         <input type="checkbox" name="chinese" id="chinese"/>
         <br/>
-        <label for="French">French</label>
+        <label for="French" class="options">French</label>
         <input type="checkbox" name="french" id="french"/>
         <br/>
         <input type="submit" id="submit">
     </form>
-
-    <form action="/route" method="POST" id="languageForm">
+</br>
+    <form action="/route" method="POST" id="languageForm" class="container">
         <h5>Technical Knowledge</h5>
-        <label for="Facebook">Social Media</label>
+        <label for="Facebook" class="options">Social Media</label>
         <input type="checkbox" name="facebook" id="facebook"/>
         <br/>
-        <label for="Microsoft">Microsoft Office</label>
+        <label for="Microsoft" class="options">Microsoft Office</label>
         <input type="checkbox" name="microsoft" id="microsoft"/>
         <br/>
         <input type="submit" id="techSubmit">
     </form>
+</br>
 
-    <form action="/route" method="POST" id="languageForm">
+    <form action="/route" method="POST" id="languageForm" class="container">
         <h5>Special Knowledge</h5>
-        <label for="Grant Writing">Grant Writing</label>
+        <label for="Grant Writing" class="options">Grant Writing</label>
         <input type="checkbox" name="grant" id="grant"/>
         <br/>
-        <label for="Web">Web Development</label>
+        <label for="Web" class="options">Web Development</label>
         <input type="checkbox" name="webDev" id="webDev"/>
         <br/>
         <input type="submit" id="skSubmit">
