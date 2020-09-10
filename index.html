@@ -10,23 +10,29 @@
 <body>
     <h1>Volunteer Hub</h1>
     <h2> UN - Volunteer Online</h2>
+    <p>Volunteer Login</p><input type="text">
+    <button class="btn">Login</button><button class="btn">Register</button>
+</br>
+    <form action="/route" method="POST" id="languageForm" class="container">
+
     <div class="volunteerInfo" class="flex-row"></div>
     <span>Volunteer Login </span><input type="text"><span>  Password </span><input type="text">
     <br><button id="login">Login</button><button id="register">Register</button>
     <div id="registerInfo" style="display:none;">
         <form action="/route" method="POST" id="volunteerForm">
             <div class = "form-group" id="languageForm">
+
         <h5>Languages</h5>
-        <label for="English">English</label>
+        <label for="English" class="options">English</label>
         <input type="checkbox" name="english" id="english"/>
         <br/>
-        <label for="Spanish">Spanish</label>
+        <label for="Spanish" class="options">Spanish</label>
         <input type="checkbox" name="spanish" id="spanish"/>
         <br/>
-        <label for="Chinese">Chinese</label>
+        <label for="Chinese" class="options">Chinese</label>
         <input type="checkbox" name="chinese" id="chinese"/>
         <br/>
-        <label for="French">French</label>
+        <label for="French" class="options">French</label>
         <input type="checkbox" name="french" id="french"/>
 
         <br/></div>
@@ -36,6 +42,10 @@
         <br/>
         <input type="submit" id="submit">
     </form>
+<<<<<<< HEAD
+</br>
+    <form action="/route" method="POST" id="languageForm" class="container">
+=======
   
 <form action="/login" method="post">
         <div>
@@ -51,20 +61,30 @@
         </div>
     </form>
     <form action="/route" method="POST" id="languageForm">
+>>>>>>> de8de2093e8f94b5e5d2f18daa0cf5000aafdeb6
         <h5>Technical Knowledge</h5>
-        <label for="Facebook">Social Media</label>
+        <label for="Facebook" class="options">Social Media</label>
         <input type="checkbox" name="facebook" id="facebook"/>
         <br/>
-        <label for="Microsoft">Microsoft Office</label>
+        <label for="Microsoft" class="options">Microsoft Office</label>
         <input type="checkbox" name="microsoft" id="microsoft"/>
+<<<<<<< HEAD
+        <br/>
+        <input type="submit" id="techSubmit">
+    </form>
+</br>
+
+    <form action="/route" method="POST" id="languageForm" class="container">
+=======
         <br/></div>
         
         <div class = "form-group" id="knowledgeForm">
+>>>>>>> de8de2093e8f94b5e5d2f18daa0cf5000aafdeb6
         <h5>Special Knowledge</h5>
-        <label for="Grant Writing">Grant Writing</label>
+        <label for="Grant Writing" class="options">Grant Writing</label>
         <input type="checkbox" name="grant" id="grant"/>
         <br/>
-        <label for="Web">Web Development</label>
+        <label for="Web" class="options">Web Development</label>
         <input type="checkbox" name="webDev" id="webDev"/>
         <br/>
         <input type="submit" id="Submit">
