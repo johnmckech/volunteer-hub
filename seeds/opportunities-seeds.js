@@ -17,6 +17,6 @@ const opportunityData = [
     },
 ];
 
-const seedOpportunities = () => Opportunities.bulkCreate(opportunityData);
+const seedOpportunities = () => Opportunities.bulkCreate(opportunityData, { individualHooks: true, returning: true });
 
 module.exports = seedOpportunities;

@@ -31,6 +31,6 @@ const volunteerData = [
     },
 ];
 
-const seedVolunteers = () => Volunteers.bulkCreate(volunteerData);
+const seedVolunteers = () => Volunteers.bulkCreate(volunteerData, { individualHooks: true, returning: true });
 
 module.exports = seedVolunteers;

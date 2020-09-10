@@ -12,6 +12,8 @@ const seedAll = async () => {
   
     await seedOpportunities();
     console.log('--------------');
+
+    process.exit(0);
 };
 
 seedAll();
