@@ -8,20 +8,21 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 <body>
-    <h1>Volunteer Hub</h1>
-    <h2> UN - Volunteer Online</h2>
-    <p>Volunteer Login</p><input type="text">
-    <button class="btn">Login</button><button class="btn">Register</button>
-</br>
-    <form action="/route" method="POST" id="languageForm" class="container">
-
+<hero>
+    <img src="assets/css/unv_logo_en_0.png">
+    <h1>Volunteer Hub</h1><br>
+    
+</hero>
+    
+    <h2> UN - Volunteer Online</h2><br>
     <div class="volunteerInfo" class="flex-row"></div>
-    <span>Volunteer Login </span><input type="text"><span>  Password </span><input type="text">
-    <br><button id="login">Login</button><button id="register">Register</button>
+    <h3>Volunteer Login </h3><br>
+    <input type="text" placeholder="Login"><span>  </span><input type="text" placeholder="Password">
+    <br> <br><button id="login">Login</button><button id="register">Register</button>
+    <br>
     <div id="registerInfo" style="display:none;">
         <form action="/route" method="POST" id="volunteerForm">
-            <div class = "form-group" id="languageForm">
-
+        <div class = "form-group" id="languageForm">
         <h5>Languages</h5>
         <label for="English" class="options">English</label>
         <input type="checkbox" name="english" id="english"/>
@@ -35,64 +36,32 @@
         <label for="French" class="options">French</label>
         <input type="checkbox" name="french" id="french"/>
 
-        <br/></div>
+        <br/></div><br>
     
-        <div class = "form-group" id="technicalForm">
-
-        <br/>
-        <input type="submit" id="submit">
-    </form>
-<<<<<<< HEAD
-</br>
-    <form action="/route" method="POST" id="languageForm" class="container">
-=======
-  
-<form action="/login" method="post">
-        <div>
-            <label>Username:</label>
-            <input type="text" name="username"/>
-        </div>
-        <div>
-            <label>Password:</label>
-            <input type="password" name="password"/>
-        </div>
-        <div>
-            <input type="submit" value="Log In"/>
-        </div>
-    </form>
-    <form action="/route" method="POST" id="languageForm">
->>>>>>> de8de2093e8f94b5e5d2f18daa0cf5000aafdeb6
-        <h5>Technical Knowledge</h5>
+    <div class = "form-group" id="technicalForm">
+     <h5>Technical Knowledge</h5>
         <label for="Facebook" class="options">Social Media</label>
         <input type="checkbox" name="facebook" id="facebook"/>
         <br/>
         <label for="Microsoft" class="options">Microsoft Office</label>
         <input type="checkbox" name="microsoft" id="microsoft"/>
-<<<<<<< HEAD
-        <br/>
-        <input type="submit" id="techSubmit">
-    </form>
-</br>
-
-    <form action="/route" method="POST" id="languageForm" class="container">
-=======
-        <br/></div>
+        <br/></div><br>
         
-        <div class = "form-group" id="knowledgeForm">
->>>>>>> de8de2093e8f94b5e5d2f18daa0cf5000aafdeb6
+        <div class = "form-group" id="specialForm">
         <h5>Special Knowledge</h5>
         <label for="Grant Writing" class="options">Grant Writing</label>
         <input type="checkbox" name="grant" id="grant"/>
         <br/>
         <label for="Web" class="options">Web Development</label>
         <input type="checkbox" name="webDev" id="webDev"/>
-        <br/>
-        <input type="submit" id="Submit">
+        <br/><br>
+        <input type="submit" id="submit">
     </div>
     </form>
 </div>
-
+<footer></footer>
     <br><a href ="admin.html">Admin</a>
+</footer>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="frontend.js"></script>
     <script src="assets/js/script.js"></script>
