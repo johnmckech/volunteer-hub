@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "",
 
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+
+
   "main": "frontend.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,12 +21,17 @@
     "db": "mysql2 db/volunteerHub.db",
     "start": "node server.js"
 
+
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/johnmckech/volunteer-hub.git"
   },
+
+  "author": "jleimer",
+
   "author": "",
+
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/johnmckech/volunteer-hub/issues"
@@ -28,12 +39,23 @@
   "homepage": "https://github.com/johnmckech/volunteer-hub#readme",
   "dependencies": {
 
+    "bcrypt": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mysql2": "^2.1.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "sequelize": "^6.3.5"
+
+
     "express": "^4.17.1"
 
     "console.table": "^0.10.0",
     "express": "^4.17.1",
     "inquirer": "^7.3.3",
     "mysql2": "^2.1.0"
+
 
   }
 }

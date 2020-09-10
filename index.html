@@ -28,9 +28,29 @@
         <br/>
         <label for="French">French</label>
         <input type="checkbox" name="french" id="french"/>
+
         <br/></div>
     
         <div class = "form-group" id="technicalForm">
+
+        <br/>
+        <input type="submit" id="submit">
+    </form>
+  
+<form action="/login" method="post">
+        <div>
+            <label>Username:</label>
+            <input type="text" name="username"/>
+        </div>
+        <div>
+            <label>Password:</label>
+            <input type="password" name="password"/>
+        </div>
+        <div>
+            <input type="submit" value="Log In"/>
+        </div>
+    </form>
+    <form action="/route" method="POST" id="languageForm">
         <h5>Technical Knowledge</h5>
         <label for="Facebook">Social Media</label>
         <input type="checkbox" name="facebook" id="facebook"/>
@@ -57,5 +77,6 @@
     <script src="frontend.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
+
 
 </html>
