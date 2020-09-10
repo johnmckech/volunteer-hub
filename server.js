@@ -62,13 +62,10 @@ sequelize.sync({ force: false }).then(() => {
 
 
 
+const inputCheck = require('./utils/inputCheck');
+const apiRoutes = require('./routes/apiRoutes');
+// const htmlRoutes = require('./routes/htmlRoutes');
 
-
-
-app.post('/',function(req,res){
-    var mainReq = req.body
-    console.log({mainReq})
-})
  
 
 // Express middleware
@@ -80,6 +77,8 @@ app.use('/api', apiRoutes);
 app.use((req, res) => {
     res.status(404).end();
 });
+
+// Start server after DB connection
 
 
 
