@@ -55,7 +55,7 @@ app.use(require('./routes/login'));
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
-=======
+
 
 const express = require('express');
 const db = require('./db/database');
