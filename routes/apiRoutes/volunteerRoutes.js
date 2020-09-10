@@ -25,9 +25,7 @@ router.get('/volunteers', (req, res) => {
 router.get('/', (req, res) => {
     Volunteer.findAll({})
         .then((volunteers) => res.json(volunteers))
-        .catch((err) => {
-            console.log(err);
-            res.status(500).json(err));
+        .catch((err) => res.status(500).json(err));
 });
 
 

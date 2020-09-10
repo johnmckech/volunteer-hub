@@ -25,9 +25,7 @@ router.get('/opportunities', (req, res) => {
 router.get('/', (req, res) => {
     Opportunity.findAll({})
         .then((opportunities) => res.json(opportunities))
-        .catch((err) => {
-            console.log(err);
-            res.status(500).json(err));
+        .catch((err) => res.status(500).json(err));
 });
 
 
