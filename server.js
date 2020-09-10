@@ -57,23 +57,11 @@ sequelize.sync({ force: false }).then(() => {
 });
 
 
-const express = require('express');
-const db = require('./db/database');
+
 const inputCheck = require('./utils/inputCheck');
 const apiRoutes = require('./routes/apiRoutes');
-const htmlRoutes = require('./routes/htmlRoutes');
+// const htmlRoutes = require('./routes/htmlRoutes');
 
-const PORT = process.env.PORT || 3030;
-const app = express();
-
-app.get('/', function (req, res) {
-  res.send('Hello World')
-})
-
-app.post('/',function(req,res){
-    var mainReq = req.body
-    console.log({mainReq})
-})
  
 app.listen(3000)
 
@@ -88,10 +76,6 @@ app.use((req, res) => {
 });
 
 // Start server after DB connection
-db.on('open', () => {
-    app.listen(PORT, () => {
-        console.log(`Server running on port ${PORT}`);
-    });
-});
+
 
 

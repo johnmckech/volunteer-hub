@@ -34,6 +34,7 @@ router.post('/signup', (req, res) => {
   
 router.get('/success', (req, res) => {
     res.send('success')
+    console.log(req.user)
 })
 
 // router.get('/login', function(req, res, next) {
