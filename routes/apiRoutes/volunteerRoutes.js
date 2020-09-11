@@ -2,8 +2,10 @@ const express = require('express');
 const router = express.Router();
 const db = require('../../config/connection')
 const inputCheck = require('../../utils/inputCheck');
+const { Volunteer, Opportunity } = require('../../models');
 
 // Get all volunteers
+/*
 router.get('/volunteers', (req, res) => {
     const sql = `SELECT volunteers.*,`;
     const params = [];
@@ -18,8 +20,17 @@ router.get('/volunteers', (req, res) => {
         });
     });
 });
+*/
+//With opportunity assign- when functionality added
+router.get('/', (req, res) => {
+    Volunteer.findAll({})
+        .then((volunteers) => res.json(volunteers))
+        .catch((err) => res.status(500).json(err));
+});
+
 
 // Get single volunteer
+/*
 router.get('/volunteers', (req, res) => {
     const sql = `SELECT volunteers.*`;
     const params = [req.params.id];
@@ -35,8 +46,22 @@ router.get('/volunteers', (req, res) => {
         });
     });
 });
+*/
+
+router.get('/:id', (req, res) => {
+    Volunteer.findOne({
+        where: {
+            id: req.params.id,
+        },
+    })
+        .then((volunteers) => res.json(volunteers))
+        .catch((err) => res.status(400).json(err));
+});
+
+
 
 // Create an volunteer
+/*
 router.post('/volunteer', ({ body }, res) => {
     const errors = inputCheck(body, 'first_name', 'last_name', 'email', 'languages', 'techKnowledge', 'specialKnowledge', 'hoursPerWeek');
     if (errors) {
@@ -59,7 +84,25 @@ router.post('/volunteer', ({ body }, res) => {
         });
     });
 });
+*/
 
+
+router.post('/', (req, res) => {
+    Volunteer.create({
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        email: req.body.email,
+        languages: req.body.languages,
+        techKnowledge: req.body.techKnowledge,
+        specialKnowledge: req.body.specialKnowledge,
+        HoursPerWeek: req.body.HoursPerWeek,
+    })
+      .then((volunteers) => res.status(200).json(volunteers))
+      .catch((err) => res.status(400).json(err));
+  });
+
+
+/*
 router.put('/volunteer/:id', (req, res) => {
     const errors = inputCheck(req.body, 'party_id');
 
@@ -83,6 +126,23 @@ router.put('/volunteer/:id', (req, res) => {
             changes: this.changes
         });
     });
+});
+*/
+router.put('/:id', (req, res) => {
+    Volunteer.update({
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        email: req.body.email,
+        languages: req.body.languages,
+        techKnowledge: req.body.techKnowledge,
+        specialKnowledge: req.body.specialKnowledge,
+        HoursPerWeek: req.body.HoursPerWeek,
+        where: {
+            id: req.params.id,
+        },
+    })
+        .then((volunteers) => res.status(200).json(volunteers))
+        .catch((err) => res.status(400).json(err));
 });
 
 module.exports = router;

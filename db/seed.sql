@@ -1,3 +1,5 @@
+
+/*
 use hub;
 
 insert INTO volunteers (first_name, last_name, email, languages, techKnowledge, specialKnowledge, hoursPerWeek)
@@ -10,3 +12,4 @@ insert into opportunities (opportunityName, languages, techKnowledge, specialKno
 VALUES
    ('Reviewing and editing research manuscript', 'English', 'Microsoft Word', 'Grant Writing', '5'),
    ('Create website for technology summit', 'English', 'Facebook', 'Web Development', '10');
+*/
