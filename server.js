@@ -11,7 +11,7 @@ const inputCheck = require('./utils/inputCheck');
 const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes/index');
 // const frontEnd  = require('./frontend');
-
+// trying to merge
 passport.use(new LocalStrategy(
   function(username, password, done) {
     User.findOne(
