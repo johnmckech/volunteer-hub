@@ -1,4 +1,3 @@
-
 const path = require('path');
 const express = require('express');
 const app = express();
@@ -8,7 +7,11 @@ const sequelize = require("./config/connection");
 const passport = require('passport')
   , LocalStrategy = require('passport-local').Strategy;
 const User = require('./models/user.js')
-
+const inputCheck = require('./utils/inputCheck');
+const apiRoutes = require('./routes/apiRoutes');
+const htmlRoutes = require('./routes/htmlRoutes/index');
+// const frontEnd  = require('./frontend');
+// trying to merge
 passport.use(new LocalStrategy(
   function(username, password, done) {
     User.findOne(
@@ -53,20 +56,17 @@ app.use(session({ secret: "cats",
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(passport.initialize());
 app.use(passport.session());
+// app.use(express.static('public'));
 app.use(require('./routes/login'));
+app.use('/', htmlRoutes);
+app.use('/admin', htmlRoutes)
+app.use(express.static(path.join(__dirname, 'public')));
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
 
-
-
-const inputCheck = require('./utils/inputCheck');
-const apiRoutes = require('./routes/apiRoutes');
-// const htmlRoutes = require('./routes/htmlRoutes');
-
- 
-app.listen(3000)
+// app.listen(3000)
 
 // Express middleware
 app.use(express.urlencoded({ extended: false }));

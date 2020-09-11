@@ -3,11 +3,11 @@ const passport = require('passport');
 const localStrategy = require('passport-local').Strategy;
 const User = require('../models/user.js');
 
-router.get('/', (req, res) => {
-    res.send('hello')
-})
+// router.get('/', (req, res) => {
+//     res.send('hello')
+// })
 
-router.post('/signup', (req, res) => {
+router.post('/', (req, res) => {
     console.log("creating user")
     // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
     console.log(req.body)
