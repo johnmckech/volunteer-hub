@@ -13,14 +13,11 @@
     "seed": "mysql2 db/volunteerHub.db <db/seed.sql",
     "db": "mysql2 db/volunteerHub.db",
     "start": "node server.js"
-
-
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/johnmckech/volunteer-hub.git"
   },
-
   "author": "jleimer",
 
   
@@ -31,7 +28,6 @@
   },
   "homepage": "https://github.com/johnmckech/volunteer-hub#readme",
   "dependencies": {
-
     "bcrypt": "^5.0.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
