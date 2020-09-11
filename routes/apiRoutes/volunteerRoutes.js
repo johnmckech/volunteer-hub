@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../../db/database');
+const db = require('../../config/connection')
 const inputCheck = require('../../utils/inputCheck');
 const { Volunteer, Opportunity } = require('../../models');
 
@@ -111,7 +111,7 @@ router.put('/volunteer/:id', (req, res) => {
         return;
     }
     //how to do multiple edit queries in sql?
-    const sql = 
+     
     const params = [req.body.party_id, req.params.id];
 
     db.run(sql, params, function (err, result) {

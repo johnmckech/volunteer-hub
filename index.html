@@ -8,71 +8,89 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 <body>
-    <h1>Volunteer Hub</h1>
-    <h2> UN - Volunteer Online</h2>
+<hero>
+    <img src="assets/css/unv_logo_en_0.png">
+    <h1>Volunteer Hub</h1><br>
+    
+</hero>
+    
+    <h2> UN - Volunteer Online</h2><br>
     <div class="volunteerInfo" class="flex-row"></div>
-    <span>Volunteer Login </span><input type="text"><span>  Password </span><input type="text">
-    <br><button id="login">Login</button><button id="register">Register</button>
+    <h3>Volunteer Login </h3><br>
+    <input type="text" placeholder="Login"><span>  </span><input type="password" placeholder="Password">
+    <br> <br><button id="firstLogin">Login</button><button id="register">Register</button>
+    <br><br>
+    <div id=registerID style="display:none;">
+        <label for="username" class="registration">User Name</label>
+        <input type="text">
+        <label for="email" class="registration">E-mail address</label>
+        <input type="text">
+        <label for="password" class="registration">Password</label>
+        <input type="password">
+        
     <div id="registerInfo" style="display:none;">
         <form action="/route" method="POST" id="volunteerForm">
-            <div class = "form-group" id="languageForm">
-        <h5>Languages</h5>
-        <label for="English">English</label>
+        <br> 
+        <p>Enter information about yourself to find volunteer positions.</p><br>
+        <div class = "form-group" id="languageForm">
+        <h5>Languages you know</h5>
+        <label for="English" class="options">English</label>
         <input type="checkbox" name="english" id="english"/>
         <br/>
-        <label for="Spanish">Spanish</label>
+        <label for="Spanish" class="options">Spanish</label>
         <input type="checkbox" name="spanish" id="spanish"/>
         <br/>
-        <label for="Chinese">Chinese</label>
+        <label for="Chinese" class="options">Chinese</label>
         <input type="checkbox" name="chinese" id="chinese"/>
         <br/>
-        <label for="French">French</label>
+        <label for="French" class="options">French</label>
         <input type="checkbox" name="french" id="french"/>
-
-        <br/></div>
+        <br/></div><br>
     
-        <div class = "form-group" id="technicalForm">
-
-        <br/>
-        <input type="submit" id="submit">
-    </form>
-  
-<form action="/login" method="post">
-        <div>
-            <label>Username:</label>
-            <input type="text" name="username"/>
-        </div>
-        <div>
-            <label>Password:</label>
-            <input type="password" name="password"/>
-        </div>
-        <div>
-            <input type="submit" value="Log In"/>
-        </div>
-    </form>
-    <form action="/route" method="POST" id="languageForm">
-        <h5>Technical Knowledge</h5>
-        <label for="Facebook">Social Media</label>
+    <div class = "form-group" id="technicalForm">
+     <h5>Technical Knowledge you have</h5>
+        <label for="Facebook" class="options">Social Media</label>
         <input type="checkbox" name="facebook" id="facebook"/>
         <br/>
-        <label for="Microsoft">Microsoft Office</label>
+        <label for="Microsoft" class="options">Microsoft Office</label>
         <input type="checkbox" name="microsoft" id="microsoft"/>
-        <br/></div>
+        <br/></div><br>
         
-        <div class = "form-group" id="knowledgeForm">
-        <h5>Special Knowledge</h5>
-        <label for="Grant Writing">Grant Writing</label>
+    <div class = "form-group" id="specialForm">
+        <h5>Special Knowledge you have</h5>
+        <label for="Grant Writing" class="options">Grant Writing</label>
         <input type="checkbox" name="grant" id="grant"/>
         <br/>
-        <label for="Web">Web Development</label>
+        <label for="Web" class="options">Web Development</label>
         <input type="checkbox" name="webDev" id="webDev"/>
+        <br/><br>
+
+    <div class="form-group" id="timeForm">
+        <h5>Availability</h5>
+        <label for="entry-level" class="options">Less than Five Hours</label>
+        <input type="checkbox" name="minimal" id="minimal"/>
         <br/>
-        <input type="submit" id="Submit">
+        <label for="advanced" class="options">5-8 Hours</label>
+        <input type="checkbox" name="moderate" id="moderate"/>
+        <br>
+        <label for="advanced" class="options">8-12 Hours</label>
+        <input type="checkbox" name="significant" id="significant"/>
+            
+        </div>
+        <br>
+        <div id=regButton style="display:none;">
+        <button id=newReg>Complete registration</button></div>
+
+        <div id=loginButton style="display:none;">
+        <button id="submit">Search</button></div>
     </div>
     </form>
 </div>
 
+
+<footer>
     <br><a href ="admin.html">Admin</a>
+</footer>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="frontend.js"></script>
     <script src="assets/js/script.js"></script>

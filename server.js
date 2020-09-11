@@ -58,3 +58,27 @@ app.use(require('./routes/login'));
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
+
+
+
+const inputCheck = require('./utils/inputCheck');
+const apiRoutes = require('./routes/apiRoutes');
+// const htmlRoutes = require('./routes/htmlRoutes');
+
+ 
+app.listen(3000)
+
+// Express middleware
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use('/api', apiRoutes);
+
+// Default response for any other requests(Not Found) Catch all
+app.use((req, res) => {
+    res.status(404).end();
+});
+
+// Start server after DB connection
+
+
+
