@@ -17,13 +17,23 @@
     <h2> UN - Volunteer Online</h2><br>
     <div class="volunteerInfo" class="flex-row"></div>
     <h3>Volunteer Login </h3><br>
-    <input type="text" placeholder="Login"><span>  </span><input type="text" placeholder="Password">
-    <br> <br><button id="login">Login</button><button id="register">Register</button>
-    <br>
+    <input type="text" placeholder="Login"><span>  </span><input type="password" placeholder="Password">
+    <br> <br><button id="firstLogin">Login</button><button id="register">Register</button>
+    <br><br>
+    <div id=registerID style="display:none;">
+        <label for="username" class="registration">User Name</label>
+        <input type="text">
+        <label for="email" class="registration">E-mail address</label>
+        <input type="text">
+        <label for="password" class="registration">Password</label>
+        <input type="password">
+        
     <div id="registerInfo" style="display:none;">
         <form action="/route" method="POST" id="volunteerForm">
+        <br> 
+        <p>Enter information about yourself to find volunteer positions.</p><br>
         <div class = "form-group" id="languageForm">
-        <h5>Languages</h5>
+        <h5>Languages you know</h5>
         <label for="English" class="options">English</label>
         <input type="checkbox" name="english" id="english"/>
         <br/>
@@ -35,11 +45,10 @@
         <br/>
         <label for="French" class="options">French</label>
         <input type="checkbox" name="french" id="french"/>
-
         <br/></div><br>
     
     <div class = "form-group" id="technicalForm">
-     <h5>Technical Knowledge</h5>
+     <h5>Technical Knowledge you have</h5>
         <label for="Facebook" class="options">Social Media</label>
         <input type="checkbox" name="facebook" id="facebook"/>
         <br/>
@@ -47,19 +56,39 @@
         <input type="checkbox" name="microsoft" id="microsoft"/>
         <br/></div><br>
         
-        <div class = "form-group" id="specialForm">
-        <h5>Special Knowledge</h5>
+    <div class = "form-group" id="specialForm">
+        <h5>Special Knowledge you have</h5>
         <label for="Grant Writing" class="options">Grant Writing</label>
         <input type="checkbox" name="grant" id="grant"/>
         <br/>
         <label for="Web" class="options">Web Development</label>
         <input type="checkbox" name="webDev" id="webDev"/>
         <br/><br>
-        <input type="submit" id="submit">
+
+    <div class="form-group" id="timeForm">
+        <h5>Availability</h5>
+        <label for="entry-level" class="options">Less than Five Hours</label>
+        <input type="checkbox" name="minimal" id="minimal"/>
+        <br/>
+        <label for="advanced" class="options">5-8 Hours</label>
+        <input type="checkbox" name="moderate" id="moderate"/>
+        <br>
+        <label for="advanced" class="options">8-12 Hours</label>
+        <input type="checkbox" name="significant" id="significant"/>
+            
+        </div>
+        <br>
+        <div id=regButton style="display:none;">
+        <button id=newReg>Complete registration</button></div>
+
+        <div id=loginButton style="display:none;">
+        <button id="submit">Search</button></div>
     </div>
     </form>
 </div>
-<footer></footer>
+
+
+<footer>
     <br><a href ="admin.html">Admin</a>
 </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
