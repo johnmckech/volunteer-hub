@@ -6,18 +6,17 @@ const PORT = process.env.PORT || 3001;
 const sequelize = require("./config/connection");
 const passport = require('passport')
   , LocalStrategy = require('passport-local').Strategy;
-const User = require('./models/user.js')
+const User = require('./models/user')
 const inputCheck = require('./utils/inputCheck');
 const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes/index');
-// const frontEnd  = require('./frontend');
-// trying to merge
+
 passport.use(new LocalStrategy(
-  function(username, password, done) {
+  function(email, password, done) {
     User.findOne(
       {
         where: {
-           username: username 
+           email: email 
         }
       }).then(user => {
       if (!user) {
@@ -41,9 +40,7 @@ passport.deserializeUser(function(user, done) {
 });
 
 app.use(express.json());
-// app.use(express.urlencoded({ extended: false }));
-// app.use(require('./routes/login'));
-// app.use(require('./config/passport'));
+
 
 var session = require("express-session"),
     bodyParser = require("body-parser");
@@ -56,24 +53,16 @@ app.use(session({ secret: "cats",
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(passport.initialize());
 app.use(passport.session());
-// app.use(express.static('public'));
-
 app.use(require('./routes/login'));
 app.use('/', htmlRoutes);
-
-//app.use(require('./routes/login'));
 app.use('/', apiRoutes);
 app.use('/admin', htmlRoutes)
-
 app.use(express.static(path.join(__dirname, 'public')));
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
 
-// app.listen(3000)
-
-// Express middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use('/api', apiRoutes);
@@ -83,7 +72,7 @@ app.use((req, res) => {
     res.status(404).end();
 });
 
-// Start server after DB connection
+
 
 
 

@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/admin', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../admin.html'));
+  res.sendFile(path.join(__dirname, '../../public/admin.html'));
 });
 
 // router.get('/zookeepers', (req, res) => {

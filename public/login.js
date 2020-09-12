@@ -28,15 +28,6 @@ async function loginFormHandler(event) {
   
   let a = document.querySelector('.login-form')
   console.log("this is login handler", a)
-  document.querySelector('#login').addEventListener('submit', loginFormHandler);
+  document.querySelector('#firstLogin').addEventListener('submit', loginFormHandler);
   //
-  document.querySelector('.signup-form').addEventListener('submit', testFunc);
-// 
-  // document.querySelector("#reButton").addEventListener("click",function(event){
-  //   event.preventDefault();
-  //   var request = new XMLHttpRequest();
-  //   request.open('post','/',true);
-
-  //   request.setRequestHeader("Content-Type","application/json");
-
-  // })  
+//   document.querySelector('.signup-form').addEventListener('submit', testFunc);
