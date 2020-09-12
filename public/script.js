@@ -20,7 +20,7 @@ $(document).ready(function(){
     });
 
 
-    $("#submit").click(function (){
+    $("#newReg").click(function (){
         const data={};
                
         data.english = $('#english').is(':checked') ? true : false;
