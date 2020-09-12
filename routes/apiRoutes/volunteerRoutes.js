@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../../config/connection')
 const inputCheck = require('../../utils/inputCheck');
-const { Volunteer, Opportunity } = require('../../models');
+const { Volunteer, Opportunity } = require('../../models/user.js');
 
 // Get all volunteers
 /*
