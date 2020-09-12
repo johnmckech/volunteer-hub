@@ -1,19 +1,8 @@
 $(document).ready(function(){
     $("#register").click(function (){
-        $("#registerID").css("display", "block");
+        console.log("Hello");
         $("#registerInfo").css("display", "block");
-        $("#regButton").css("display", "block");
     });
-
-    $("#firstLogin").click(function (){
-        $("#registerInfo").css("display", "block");
-        $("#loginButton").css("display", "block");
-    });
-
-    $("#adminLogin").click(function (){
-        $("#opportunityInfo").css("display", "block");
-    });
-
 
     $("#submit").click(function (){
         const data={};
@@ -26,9 +15,6 @@ $(document).ready(function(){
         data.microsoft = $('#microsoft').is(':checked') ? true : false;
         data.grant = $('#grant').is(':checked') ? true : false;
         data.webDev = $('#webDev').is(':checked') ? true : false;
-        data.minimal = $('#minimal').is(':checked') ? true : false;
-        data.moderate = $('#moderate').is(':checked') ? true : false;
-        data.significant = $('#significant').is(':checked') ? true : false;
       
     //if JSON.stringify(data) doesn't work, just send data
         $.ajax({
@@ -37,12 +23,10 @@ $(document).ready(function(){
             data: JSON.stringify(data),
           });
           
-        window.location.href = "results.html";
+        window.location.href = "../results.html";
         return false;
-    });
+    })
     $("#submitAdmin").click(function (){
-        $("#submitted").css("display", "block");
-        
         const data={};
                
         data.english = $('#english').is(':checked') ? true : false;
@@ -61,11 +45,8 @@ $(document).ready(function(){
             data: JSON.stringify(data),
           });
           
-        
+        window.location.href = "../results.html";
         return false;
-
-        
-
     })
 });
 

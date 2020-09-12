@@ -18,13 +18,10 @@
             <div class="volunteerInfo" class="flex-row"></div>
             <h3>Admin Login </h3><br>
             <input type="text" placeholder="Login Code"><span>
-            <br> <br><button id="adminLogin">Login</button>
+            <br> <br><button id="login">Login</button>
             <br>
-            <div id="opportunityInfo" style="display:none;">
+            <div id="opportunityInfo" >
                 <form action="/route" method="POST" id="opportunityForm">
-                    <br>
-                <h5>Title</h5><input type-text>
-                <br><br>
                 <div class = "form-group" id="languageForm">
                 <h5>Languages</h5>
                 <label for="English" class="options">English</label>
@@ -50,7 +47,7 @@
                 <input type="checkbox" name="microsoft" id="microsoft"/>
                 <br/></div><br>
                 
-            <div class = "form-group" id="specialForm">
+                <div class = "form-group" id="specialForm">
                 <h5>Special Knowledge</h5>
                 <label for="Grant Writing" class="options">Grant Writing</label>
                 <input type="checkbox" name="grant" id="grant"/>
@@ -58,27 +55,12 @@
                 <label for="Web" class="options">Web Development</label>
                 <input type="checkbox" name="webDev" id="webDev"/>
                 <br/><br>
-
-            <div class="form-group" id="timeForm">
-                <h5>Availability</h5>
-                <label for="entry-level" class="options">Less than Five Hours</label>
-                <input type="checkbox" name="minimal" id="minimal"/>
-                <br/>
-                <label for="advanced" class="options">5-8 Hours</label>
-                <input type="checkbox" name="moderate" id="moderate"/>
-                <br>
-                <label for="advanced" class="options">8-12 Hours</label>
-                <input type="checkbox" name="significant" id="significant"/>
-        
-            </div>
                 <input type="submit" id="submitAdmin">
-                <div id="submitted" style="display:none;">
-                <br> New opportunity submitted!</div>
             </div>
             </form>
         </div>
         <footer></footer>
-            <br><a href ="/admin">Admin</a>
+            <br><a href ="admin.html">Admin</a>
         </footer>
             <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
             <script src="frontend.js"></script>
