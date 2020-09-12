@@ -29,8 +29,8 @@ router.get('/', (req, res) => {
 });
 
 
-// Get single volunteer
-/*
+//Get single volunteer
+
 router.get('/volunteers', (req, res) => {
     const sql = `SELECT volunteers.*`;
     const params = [req.params.id];
@@ -46,7 +46,7 @@ router.get('/volunteers', (req, res) => {
         });
     });
 });
-*/
+
 
 router.get('/:id', (req, res) => {
     Volunteer.findOne({
@@ -61,14 +61,15 @@ router.get('/:id', (req, res) => {
 
 
 // Create an volunteer
-/*
-router.post('/volunteer', ({ body }, res) => {
-    const errors = inputCheck(body, 'first_name', 'last_name', 'email', 'languages', 'techKnowledge', 'specialKnowledge', 'hoursPerWeek');
-    if (errors) {
-        res.status(400).json({ error: errors });
-        return;
-    }
-    const sql = `INSERT INTO volunteers (first_name, last_name, email, languages, techKnowledge, specialKnowledge hoursPerWeek) 
+
+router.post('/volunteer', (req, res) => {
+    //const errors = inputCheck(body, 'first_name', 'last_name', 'email', 'languages', 'techKnowledge', 'specialKnowledge', 'hoursPerWeek');
+    //if (errors) {
+    //    res.status(400).json({ error: errors });
+    //    return;
+    //}
+    console.log("This is is body ", req.body)
+    const sql = `INSERT INTO volunteers (user, last_name, email, languages, techKnowledge, specialKnowledge hoursPerWeek) 
               VALUES (?,?,?,?)`;
     const params = [body.first_name, body.last_name, body.email, body.langauges, body.techKnowledge, body.specialKnowledge, body.hoursPerWeek];
     db.run(sql, params, function (err, result) {
@@ -84,7 +85,7 @@ router.post('/volunteer', ({ body }, res) => {
         });
     });
 });
-*/
+
 
 
 router.post('/', (req, res) => {

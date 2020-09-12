@@ -2,10 +2,6 @@
   "name": "volunteer-hub",
   "version": "1.0.0",
   "description": "",
-
-  
-
- 
   "main": "server.js",
   "scripts": {
     "test": "jest",
@@ -19,27 +15,23 @@
     "url": "git+https://github.com/johnmckech/volunteer-hub.git"
   },
   "author": "jleimer",
-
-  
-
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/johnmckech/volunteer-hub/issues"
   },
   "homepage": "https://github.com/johnmckech/volunteer-hub#readme",
   "dependencies": {
-    "bcrypt": "^5.0.0",
+    "bcrypt": "^3.0.6",
+    "console.table": "^0.10.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
+    "inquirer": "^7.3.3",
+    "jquery": "^3.5.1",
+    "mysql": "^2.18.1",
     "mysql2": "^2.1.0",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "sequelize": "^6.3.5",
-    "console.table": "^0.10.0",
-    "inquirer": "^7.3.3"
-   
-
-
+    "sequelize": "^6.3.5"
   }
 }

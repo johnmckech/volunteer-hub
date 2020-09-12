@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const inputCheck = require('../../utils/inputCheck');
+const inputCheck = require('../utils/inputCheck');
 
 // Get all opportunities
 router.get('/opportunities', (req, res) => {

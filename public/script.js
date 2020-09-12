@@ -3,11 +3,16 @@ $(document).ready(function(){
         $("#registerID").css("display", "block");
         $("#registerInfo").css("display", "block");
         $("#regButton").css("display", "block");
+        $("#loginButton").css("display", "none");
     });
 
     $("#firstLogin").click(function (){
-        $("#registerInfo").css("display", "block");
+        console.log("hello");
+        $("#loginInfo").css("display", "block");
         $("#loginButton").css("display", "block");
+        $("#registerID").css("display", "none");
+        $("#regButton").css("display", "none");
+        $("#registerInfo").css("display", "none");
     });
 
     $("#adminLogin").click(function (){
@@ -53,6 +58,9 @@ $(document).ready(function(){
         data.microsoft = $('#microsoft').is(':checked') ? true : false;
         data.grant = $('#grant').is(':checked') ? true : false;
         data.webDev = $('#webDev').is(':checked') ? true : false;
+        data.minimal = $('#minimal').is(':checked') ? true : false;
+        data.moderate = $('#moderate').is(':checked') ? true : false;
+        data.significant = $('#significant').is(':checked') ? true : false;
       
     //if JSON.stringify(data) doesn't work, just send data
         $.ajax({

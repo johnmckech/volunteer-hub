@@ -59,7 +59,6 @@ app.use(passport.session());
 // app.use(express.static('public'));
 app.use(require('./routes/login'));
 app.use('/', htmlRoutes);
-app.use('/admin', htmlRoutes)
 app.use(express.static(path.join(__dirname, 'public')));
 
 sequelize.sync({ force: false }).then(() => {
