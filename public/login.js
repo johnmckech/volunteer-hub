@@ -14,7 +14,7 @@ async function loginFormHandler(event) {
       });
   
       if (response.ok) {
-        document.location.replace('/opprotunities');
+        document.location.replace('/opportunities');
       } else {
         alert(response.statusText);
       }
@@ -31,4 +31,12 @@ async function loginFormHandler(event) {
   document.querySelector('#login').addEventListener('submit', loginFormHandler);
   //
   document.querySelector('.signup-form').addEventListener('submit', testFunc);
-  
+// 
+  // document.querySelector("#reButton").addEventListener("click",function(event){
+  //   event.preventDefault();
+  //   var request = new XMLHttpRequest();
+  //   request.open('post','/',true);
+
+  //   request.setRequestHeader("Content-Type","application/json");
+
+  // })  

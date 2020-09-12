@@ -60,6 +60,21 @@ router.post('/opportunity', ({ body }, res) => {
     });
 });
 
+
+router.post('/', (req, res) => {
+    console.log(req.body)
+    Opportunity.create({
+        opportunityName: req.body.opportunityName,
+        languages: req.body.languages,
+        techKnowledge: req.body.techKnowledge,
+        specialKnowledge: req.body.specialKnowledge,
+        HoursPerWeek: req.body.HoursPerWeek,
+    })
+        .then((opportunities) => res.status(200).json(opportunities))
+        .catch((err) => res.status(400).json(err));
+});
+
+
 router.put('/opportunity/:id', (req, res) => {
     const errors = inputCheck(req.body, 'party_id');
 
