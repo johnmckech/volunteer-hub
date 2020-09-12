@@ -57,8 +57,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(passport.initialize());
 app.use(passport.session());
 // app.use(express.static('public'));
-app.use(require('./routes/login'));
-app.use('/', htmlRoutes);
+//app.use(require('./routes/login'));
+app.use('/', apiRoutes);
 app.use('/admin', htmlRoutes)
 app.use(express.static(path.join(__dirname, 'public')));
 
