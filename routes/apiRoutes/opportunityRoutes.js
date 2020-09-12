@@ -84,6 +84,7 @@ router.post('/opportunity', ({ body }, res) => {
 */
 
 router.post('/', (req, res) => {
+    console.log(req.body)
     Opportunity.create({
         opportunityName: req.body.opportunityName,
         languages: req.body.languages,
