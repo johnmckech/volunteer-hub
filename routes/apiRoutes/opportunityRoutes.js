@@ -1,7 +1,6 @@
 const express = require('express');
-const router = express.Router();
-
-
+const router = require('express').Router();
+const Opportunity = require('../../models/opportunities')
 const inputCheck = require('../../utils/inputCheck');
 
 // Get all opportunities

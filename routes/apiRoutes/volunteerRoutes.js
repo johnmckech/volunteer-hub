@@ -1,8 +1,8 @@
 const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
 const db = require('../../config/connection')
 const inputCheck = require('../../utils/inputCheck');
-const { Volunteer, Opportunity } = require('../../models/user.js');
+const Volunteer = require('../../models/volunteers.js');
 
 // Get all volunteers
 /*
@@ -22,7 +22,7 @@ router.get('/volunteers', (req, res) => {
 });
 */
 //With opportunity assign- when functionality added
-router.get('/', (req, res) => {
+router.get('/getAll', (req, res) => {
     Volunteer.findAll({})
         .then((volunteers) => res.json(volunteers))
         .catch((err) => res.status(500).json(err));
@@ -47,17 +47,16 @@ router.get('/volunteers', (req, res) => {
     });
 });
 
-/*
-router.get('/:id', (req, res) => {
-    Volunteer.findOne({
-        where: {
-            id: req.params.id,
-        },
-    })
-        .then((volunteers) => res.json(volunteers))
-        .catch((err) => res.status(400).json(err));
-});
-*/
+
+// router.get('/:id', (req, res) => {
+//     Volunteer.findOne({
+//         where: {
+//             id: req.params.id,
+//         },
+//     })
+//         .then((volunteers) => res.json(volunteers))
+//         .catch((err) => res.status(400).json(err));
+// });
 
 
 
@@ -89,19 +88,19 @@ router.post('/volunteer', (req, res) => {
 
 
 
-router.post('/', (req, res) => {
-    Volunteer.create({
-        first_name: req.body.first_name,
-        last_name: req.body.last_name,
-        email: req.body.email,
-        languages: req.body.languages,
-        techKnowledge: req.body.techKnowledge,
-        specialKnowledge: req.body.specialKnowledge,
-        HoursPerWeek: req.body.HoursPerWeek,
-    })
-      .then((volunteers) => res.status(200).json(volunteers))
-      .catch((err) => res.status(400).json(err));
-  });
+// router.post('/', (req, res) => {
+//     Volunteer.create({
+//         first_name: req.body.first_name,
+//         last_name: req.body.last_name,
+//         email: req.body.email,
+//         languages: req.body.languages,
+//         techKnowledge: req.body.techKnowledge,
+//         specialKnowledge: req.body.specialKnowledge,
+//         HoursPerWeek: req.body.HoursPerWeek,
+//     })
+//       .then((volunteers) => res.status(200).json(volunteers))
+//       .catch((err) => res.status(400).json(err));
+//   });
 
 
 /*
