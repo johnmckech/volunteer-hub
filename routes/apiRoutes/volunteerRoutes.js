@@ -47,7 +47,7 @@ router.get('/volunteers', (req, res) => {
     });
 });
 
-
+/*
 router.get('/:id', (req, res) => {
     Volunteer.findOne({
         where: {
@@ -57,6 +57,7 @@ router.get('/:id', (req, res) => {
         .then((volunteers) => res.json(volunteers))
         .catch((err) => res.status(400).json(err));
 });
+*/
 
 
 

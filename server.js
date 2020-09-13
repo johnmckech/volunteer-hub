@@ -55,7 +55,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(require('./routes/login'));
 app.use('/', htmlRoutes);
-app.use('/', apiRoutes);
+app.use('/api', apiRoutes);
 app.use('/admin', htmlRoutes)
 app.use(express.static(path.join(__dirname, 'public')));
 
