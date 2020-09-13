@@ -45,7 +45,7 @@ passport.use(new LocalStrategy(
 
 
 
-passport.serializeVolunteer(function(volunteer, done) {
+passport.serializeUser(function(user, done) {
   done(null, volunteer);
 });
 
