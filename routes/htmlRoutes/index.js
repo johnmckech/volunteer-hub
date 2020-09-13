@@ -1,21 +1,27 @@
+const express = require('express');
+const router = express.Router();
 const path = require('path');
-const router = require('express').Router();
+
+router.use('/login', require('./login'));
+router.use('/register', require('./register'));
+
+///////////
 
 router.post("/volunteer", (req, res)=>{
   console.log("in volunteer file")
   res.send("hello")
 })
 
-router.get('/', (req, res) => {
+router.get('/', isAuthenticated, function(req, res, next) { 
   res.sendFile(path.join(__dirname, 'public'));
 });
 
-router.get('/admin', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../public/admin.html'));
-});
+function isAuthenticated(req, res, next) {
+  if (req.isAuthenticated())
+    return next();
+  res.redirect('/');
+}
+ 
 
-// router.get('/zookeepers', (req, res) => {
-//   res.sendFile(path.join(__dirname, '../../public/zookeepers.html'));
-// });
 
 module.exports = router;

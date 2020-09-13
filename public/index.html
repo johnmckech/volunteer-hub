@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,111 +9,119 @@
 
     <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-<hero>
-    <img src="unv_logo_en_0.png">
 
-    <h1>Volunteer Hub</h1><br>
-    
-</hero>
-    
+<body>
+    <hero>
+        <img src="unv_logo_en_0.png">
+
+        <h1>Volunteer Hub</h1><br>
+
+    </hero>
+
     <h2> UN - Volunteer Online</h2><br>
     <div class="volunteerInfo" class="flex-row"></div>
     <h3>Volunteer Login </h3><br>
 
-    <form action="/login" method="POST" ><input id="email-login" type="text" placeholder="email"><span>  </span><input id="password-login" type="password" placeholder="Password">
-    <br> <br><button type= "submit" id="firstLogin">Login</button></form>
+    <form action="/login" method="POST">
+        <input id="user-login" type="text" placeholder="username" name="username"><span> </span>>
+        <input id="password-login" type="password" placeholder="Password" name="password">
+        <br> <br>
+        <button type="submit" id="firstLogin">Login</button>
+    </form>
+
     <br><br><button id="register">Register</button>
+
+
     <form id="registerID" style="display:none;">
-        
+
         <label for="username" class="registration">User Name</label>
-        <input type="text">
+        <input name="username" type="text" id="registerUsername">
         <label for="email" class="registration">E-mail address</label>
-        <input type="text">
+        <input name="email" type="text" id="registerEmail">
         <label for="password" class="registration">Password</label>
-        <input type="password">
+        <input name="password" type="password">
+
+        <div id="reginfo">
+            <div id="registerInfo" style="display:none;">
+                <br>
+                <p>Enter information about yourself to find volunteer positions.</p><br>
+
+                <div class="form-group" id="languageForm">
+                    <h5>Languages you know</h5>
+                    <label for="English" class="options">English</label>
+                    <input type="checkbox" name="englishBox" value="English" id="english" />
+                    <br />
+                    <label for="Spanish" class="options">Spanish</label>
+                    <input type="checkbox" name="spanishBox" value="Spanish" id="spanish" />
+                    <br />
+                    <label for="Chinese" class="options">Chinese</label>
+                    <input type="checkbox" name="chineseBox" value="Chinese" id="chinese" />
+                    <br />
+                    <label for="French" class="options">French</label>
+                    <input type="checkbox" name="frenchBox" value="French" id="french" />
+                    <br />
+                </div><br>
+
+                <div class="form-group" id="technicalForm">
+                    <h5>Technical Knowledge you have</h5>
+                    <label for="Facebook" class="options">Social Media</label>
+                    <input type="checkbox" name="facebook" id="facebook" />
+                    <br />
+                    <label for="Microsoft" class="options">Microsoft Office</label>
+                    <input type="checkbox" name="microsoft" id="microsoft" />
+                    <br />
+                </div><br>
+
+                <div class="form-group" id="specialForm">
+                    <h5>Special Knowledge you have</h5>
+                    <label for="Grant Writing" class="options">Grant Writing</label>
+                    <input type="checkbox" name="grant" id="grant" />
+                    <br />
+                    <label for="Web" class="options">Web Development</label>
+                    <input type="checkbox" name="webDev" id="webDev" />
+                    <br />
+                </div><br>
+
+                <div class="form-group" id="timeForm">
+                    <h5>Availability</h5>
+                    <label for="entry-level" class="options">Less than Five Hours</label>
+                    <input type="checkbox" name="minimal" id="minimal" />
+                    <br />
+                    <label for="advanced" class="options">5-8 Hours</label>
+                    <input type="checkbox" name="moderate" id="moderate" />
+                    <br>
+                    <label for="advanced" class="options">8-12 Hours</label>
+                    <input type="checkbox" name="significant" id="significant" />
+
+                </div>
+                <br>
+            </div>
+            <div id="regButton" style="display:none;">
+                <button type="submit" id="newReg">Complete registration</button>
+            </div>
+
     </form>
-
-    <div id="allinfo">
-        <form action="/route" method="POST" id="volunteerForm">
-        <div id="loginInfo" style="display:none;">    
-        <br> 
-        
-            
-        </div>
-        
-        
-        <div id="loginButton" style="display:none;">
-        <button id="submit">Search</button></div>
-    </form>
-</div>
-
-<div id="reginfo">
-    <form action="/route" method="POST" id="registerForm">
-    <div id="registerInfo" style="display:none;">    
-    <br> 
-    <p>Enter information about yourself to find volunteer positions.</p><br>
-    <div class = "form-group" id="languageForm">
-    <h5>Languages you know</h5>
-    <label for="English" class="options">English</label>
-    <input type="checkbox" name="english" id="english"/>
-    <br/>
-    <label for="Spanish" class="options">Spanish</label>
-    <input type="checkbox" name="spanish" id="spanish"/>
-    <br/>
-    <label for="Chinese" class="options">Chinese</label>
-    <input type="checkbox" name="chinese" id="chinese"/>
-    <br/>
-    <label for="French" class="options">French</label>
-    <input type="checkbox" name="french" id="french"/>
-    <br/></div><br>
-
-<div class = "form-group" id="technicalForm">
- <h5>Technical Knowledge you have</h5>
-    <label for="Facebook" class="options">Social Media</label>
-    <input type="checkbox" name="facebook" id="facebook"/>
-    <br/>
-    <label for="Microsoft" class="options">Microsoft Office</label>
-    <input type="checkbox" name="microsoft" id="microsoft"/>
-    <br/></div><br>
-    
-<div class = "form-group" id="specialForm">
-    <h5>Special Knowledge you have</h5>
-    <label for="Grant Writing" class="options">Grant Writing</label>
-    <input type="checkbox" name="grant" id="grant"/>
-    <br/>
-    <label for="Web" class="options">Web Development</label>
-    <input type="checkbox" name="webDev" id="webDev"/>
-    <br/></div><br>
-
-<div class="form-group" id="timeForm">
-    <h5>Availability</h5>
-    <label for="entry-level" class="options">Less than Five Hours</label>
-    <input type="checkbox" name="minimal" id="minimal"/>
-    <br/>
-    <label for="advanced" class="options">5-8 Hours</label>
-    <input type="checkbox" name="moderate" id="moderate"/>
-    <br>
-    <label for="advanced" class="options">8-12 Hours</label>
-    <input type="checkbox" name="significant" id="significant"/>
-        
     </div>
-    <br>
-</div>
-    <div id="regButton" style="display:none;">
-    <button id=newReg>Complete registration</button></div>
 
-</form>
-</div>
+    <footer></footer>
+    <br><a href="admin.html">Admin</a>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
-<footer></footer>
-    <br><a href ="admin.html">Admin</a>
-</footer>
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    
     <script src="script.js"></script>
     <script src="login.js"></script>
-
+    <script>
+        const req = new XMLHttpRequest();
+        req.onreadystatechange = function () {
+            if (req.readyState == 4 && req.status == 200) {
+                const user = JSON.parse(req.response).user;
+                document.getElementById("welcome-message").innerText = `Welcome ${user.username}!!`;
+            }
+        };
+        req.open("GET", "http://localhost:3000/user", true);
+        req.send();
+    </script>
 </body>
 
 
