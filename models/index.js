@@ -17,4 +17,4 @@ User.hasMany(Volunteers,  {
 });
 */
 
-module.exports = { Volunteers, Opportunities, User};
+module.exports = { Volunteers, Opportunities};

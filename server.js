@@ -6,11 +6,12 @@ const PORT = process.env.PORT || 3001;
 const sequelize = require("./config/connection");
 const passport = require('passport')
   , LocalStrategy = require('passport-local').Strategy;
-const { User, Volunteers } = require('./models')
+const { Volunteers } = require('./models')
 const inputCheck = require('./utils/inputCheck');
 const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes/index');
 const bodyParser = require('body-parser');
+const Volunteer = require('./models/volunteers');
 // const connectEnsureLogin = require('connect-ensure-login');
 const expressSession = require('express-session')({
   secret: 'secret',
@@ -21,20 +22,20 @@ const expressSession = require('express-session')({
 passport.use(new LocalStrategy(
   function(username, password, done) {
     console.log('Attempting to login..')
-    User.findOne(
+    Volunteer.findOne(
       {
         where: {
            username: username 
         }
-      }).then(user => {
-      if (!user) {
+      }).then(volunteer => {
+      if (!volunteer) {
         return done(null, false, { message: 'Incorrect username.' });
       }
-      console.log(user.password + ' vs ' + password)
-      if (!user.checkPassword(password)) {
+      console.log(volunteer.password + ' vs ' + password)
+      if (!volunteer.checkPassword(password)) {
         return done(null, false, { message: 'Incorrect password.' });
       }
-      done(null, user);
+      done(null, volunteer);
     }).catch(err => {
       console.log(err);
       done(err)
@@ -45,11 +46,11 @@ passport.use(new LocalStrategy(
 
 
 passport.serializeUser(function(user, done) {
-  done(null, user);
+  done(null, volunteer);
 });
 
 passport.deserializeUser(function(user, done) {
-    done(null, user);
+    done(null, volunteer);
 });
 
 app.use(express.json());
