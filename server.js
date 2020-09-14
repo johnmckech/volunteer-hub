@@ -24,7 +24,7 @@ passport.use(new LocalStrategy(
     Volunteer.findOne(
       {
         where: {
-           username: username 
+           username: req.body.username 
         }
       }).then(volunteer => {
       if (!volunteer) {
@@ -45,11 +45,11 @@ passport.use(new LocalStrategy(
 
 
 passport.serializeUser(function(user, done) {
-  done(null, volunteer);
+  done(null, user);
 });
 
 passport.deserializeUser(function(user, done) {
-    done(null, volunteer);
+    done(null, user);
 });
 
 app.use(express.json());
