@@ -6,7 +6,6 @@ const PORT = process.env.PORT || 3001;
 const sequelize = require("./config/connection");
 const passport = require('passport')
   , LocalStrategy = require('passport-local').Strategy;
-const { Volunteers } = require('./models')
 const inputCheck = require('./utils/inputCheck');
 const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes/index');
@@ -59,14 +58,14 @@ app.use(express.static("public"));
 //                   resave: true,
 //                   saveUninitialized: true
 //                 }));
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(passport.initialize());
 app.use(expressSession);
 app.use(passport.session());
-// app.use(require('./routes/index'));
+
 app.use('/', htmlRoutes);
 app.use('/api', apiRoutes);
-// app.use('/admin', htmlRoutes)
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 
@@ -75,8 +74,6 @@ sequelize.sync({ force: false }).then(() => {
 });
 
 app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-app.use('/api', apiRoutes);
 
 // Default response for any other requests(Not Found) Catch all
 app.use((req, res) => {

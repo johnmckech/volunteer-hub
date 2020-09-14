@@ -91,7 +91,7 @@ Volunteer.init(
         timestamps: true,
         freezeTableName: true,
         underscored: true,
-        modelName: 'volunteer',
+        modelName: 'user',
       }
     
 )

@@ -1,6 +1,6 @@
 //import
-const Volunteers = require('./opportunities.js');
-const Opportunities = require('./volunteers.js');
+const Volunteers = require('./volunteers.js');
+const Opportunities = require('./opportunities.js');
 
 
 Volunteers.hasMany(Opportunities,  {
