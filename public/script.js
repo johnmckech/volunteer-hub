@@ -45,13 +45,14 @@ $(document).ready(function(){
         // data.significant = $('#significant').is(':checked') ? true : false;
 
         const data = {
-            first_name: "default",
-            last_name: "default",
+            first_name: $('#registerFirstName').val(),
+            last_name: $('#registerLastName').val(),
+            username: $('#registerUser').val(),
             email: $('#registerEmail').val(),
             languages: language,
             techKnowledge: tech,
             specialKnowledge: specialKnowledge,
-            HoursPerWeek: 5
+            HoursPerWeek: $('#registerHours').val()
         };
 
         console.log(data);

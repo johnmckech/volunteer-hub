@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
+const { type } = require('jquery');
 
 class Volunteer extends Model {}
 
@@ -29,11 +30,27 @@ Volunteer.init(
             }
         },
 
+        username: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [4]
+            }
+        },
+
         email: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [5]
+            }
+        },
+
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [4]
             }
         },
         
