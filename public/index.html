@@ -32,7 +32,7 @@
     <br><br><button id="register">Register</button>
 
 
-    <form id="registerID" style="display:none;">
+    <form id="registerID" style="display:none;" action="/register" method="POST">
 
         <label for="firstName" class="registration">First Name</label>
         <input name="first_name" type="text" id="registerFirstName"><br>
@@ -88,16 +88,10 @@
 
                 <div class="form-group" id="timeForm">
                     <h5>Availability</h5>
-                    <label for="entry-level" class="options">Less than Five Hours</label>
-                    <input type="checkbox" name="minimal" id="minimal" />
-                    <br />
-                    <label for="advanced" class="options">5-8 Hours</label>
-                    <input type="checkbox" name="moderate" id="moderate" />
-                    <br>
-                    <label for="advanced" class="options">8-12 Hours</label>
-                    <input type="checkbox" name="significant" id="significant" />
-
                 </div>
+                    <label for="hours" class="registration">Hours</label>
+                    <input name="HoursPerWeek" type="text" id="registerHours">
+                
                 <br>
             </div>
             <div id="regButton" style="display:none;">

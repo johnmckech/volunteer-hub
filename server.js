@@ -9,7 +9,8 @@ const passport = require('passport')
 const inputCheck = require('./utils/inputCheck');
 const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes/index');
-const bodyParser = require('body-parser');
+var session = require("express-session"),
+    bodyParser = require("body-parser");
 const Volunteer = require('./models/volunteers');
 // const connectEnsureLogin = require('connect-ensure-login');
 const expressSession = require('express-session')({
@@ -18,29 +19,7 @@ const expressSession = require('express-session')({
   saveUninitialized: false
 });
 
-passport.use(new LocalStrategy(
-  function(username, password, done) {
-    console.log('Attempting to login..')
-    Volunteer.findOne(
-      {
-        where: {
-           username: req.body.username 
-        }
-      }).then(volunteer => {
-      if (!volunteer) {
-        return done(null, false, { message: 'Incorrect username.' });
-      }
-      console.log(volunteer.password + ' vs ' + password)
-      if (!volunteer.checkPassword(password)) {
-        return done(null, false, { message: 'Incorrect password.' });
-      }
-      done(null, volunteer);
-    }).catch(err => {
-      console.log(err);
-      done(err)
-    });
-  }
-));
+
 
 
 
@@ -54,10 +33,7 @@ passport.deserializeUser(function(user, done) {
 
 app.use(express.json());
 app.use(express.static("public"));
-// app.use(session({ secret: "cats", 
-//                   resave: true,
-//                   saveUninitialized: true
-//                 }));
+app.use(session({ secret: "cats" }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(passport.initialize());
 app.use(expressSession);

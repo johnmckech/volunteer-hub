@@ -9,14 +9,14 @@ Volunteer.init(
     {
         id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
             primaryKey: true,
             autoIncrement: true,
         },
 
         first_name: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 len: [2]
             }
@@ -24,7 +24,7 @@ Volunteer.init(
 
         last_name: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 len: [2]
             }
@@ -32,7 +32,7 @@ Volunteer.init(
 
         username: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 len: [4]
             }
@@ -40,7 +40,7 @@ Volunteer.init(
 
         email: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 len: [5]
             }
@@ -48,7 +48,7 @@ Volunteer.init(
 
         password: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 len: [4]
             }
@@ -56,7 +56,7 @@ Volunteer.init(
         
         languages: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 len: [4]
             }
@@ -64,7 +64,7 @@ Volunteer.init(
 
         techKnowledge: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 len: [5]
             }
@@ -72,7 +72,7 @@ Volunteer.init(
 
         specialKnowledge: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 len: [5]
             }
@@ -80,7 +80,7 @@ Volunteer.init(
 
         HoursPerWeek: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 len: [1]
             }
