@@ -47,8 +47,9 @@ $(document).ready(function(){
         const data = {
             first_name: $('#registerFirstName').val(),
             last_name: $('#registerLastName').val(),
-            username: $('#registerUser').val(),
+            username: $('#registerUsername').val(),
             email: $('#registerEmail').val(),
+            password: $('#registerPassword').val(),
             languages: language,
             techKnowledge: tech,
             specialKnowledge: specialKnowledge,
