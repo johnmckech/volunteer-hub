@@ -3,7 +3,11 @@ const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 const { type } = require('jquery');
 
-class Volunteer extends Model {}
+class Volunteer extends Model {
+    checkPassword(loginPw) {
+        return bcrypt.compareSync(loginPw, this.password);
+      }
+}
 
 Volunteer.init(
     {

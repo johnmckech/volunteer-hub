@@ -9,8 +9,7 @@ const passport = require('passport')
 const inputCheck = require('./utils/inputCheck');
 const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes/index');
-var session = require("express-session"),
-    bodyParser = require("body-parser");
+
 const Volunteer = require('./models/volunteers');
 // const connectEnsureLogin = require('connect-ensure-login');
 const expressSession = require('express-session')({
@@ -19,29 +18,48 @@ const expressSession = require('express-session')({
   saveUninitialized: false
 });
 
+passport.use(new LocalStrategy(
+  function(username, password, done) {
+    Volunteer.findOne(
+      {
+        where: {
+           username: username 
+        }
+      }).then(volunteer => {
+      if (!volunteer) {
+        return done(null, false, { message: 'Incorrect username.' });
+      }
+      console.log(volunteer.password + ' vs ' + password)
+      if (!volunteer.checkPassword(password)) {
+        return done(null, false, { message: 'Incorrect password.' });
+      }
 
+      done(null, volunteer);
+      }).catch(err => done(err));
+  }
+  ));
 
-
-
-passport.serializeUser(function(user, done) {
-  done(null, user);
+passport.serializeUser(function(volunteer, done) {
+  done(null, volunteer);
 });
 
-passport.deserializeUser(function(user, done) {
-    done(null, user);
+passport.deserializeUser(function(volunteer, done) {
+    done(null, volunteer);
 });
 
 app.use(express.json());
+
+const session = require("express-session"),
+    bodyParser = require("body-parser");
+
 app.use(express.static("public"));
 app.use(session({ secret: "cats" }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(passport.initialize());
-app.use(expressSession);
 app.use(passport.session());
-
+app.use(expressSession);
 app.use('/', htmlRoutes);
 app.use('/api', apiRoutes);
-
 app.use(express.static(path.join(__dirname, 'public')));
 
 
@@ -49,12 +67,12 @@ sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
 
-app.use(express.urlencoded({ extended: false }));
+// app.use(express.urlencoded({ extended: false }));
 
 // Default response for any other requests(Not Found) Catch all
-app.use((req, res) => {
-    res.status(404).end();
-});
+// app.use((req, res) => {
+//     res.status(404).end();
+// });
 
 
 
