@@ -1,11 +1,20 @@
 const router = require('express').Router();
 const passport = require('passport')
 
-  
-router.get('/success', (req, res) => {
-    res.send('success')
-    console.log("it worked")
-})
+function isAuthenticated(req, res, next) {
+  if (req.isAuthenticated())
+    return next();
+  res.redirect('/');
+}
+ 
+router.get('/success', isAuthenticated, function(req, res, next) { 
+  res.sendFile(isAuthenticated());
+});
+
+// router.get('/success', (req, res) => {
+//     res.send('success')
+//     console.log("it worked")
+// })
 
 // passport.use(new LocalStrategy(
 //   function(username, password, done) {

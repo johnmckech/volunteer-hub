@@ -12,16 +12,9 @@ router.post("/volunteer", (req, res)=>{
   res.send("hello")
 })
 
-router.get('/', isAuthenticated, function(req, res, next) { 
-  res.sendFile(path.join(__dirname, 'public'));
-});
 
-function isAuthenticated(req, res, next) {
-  if (req.isAuthenticated())
-    return next();
-  res.redirect('/');
-}
- 
+
+
 
 
 module.exports = router;
