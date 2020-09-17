@@ -1,12 +1,8 @@
-const path = require('path');
-const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
 const passport = require('passport')
 
-  , LocalStrategy = require('passport-local').Strategy;
-const Volunteer = require('../../models/volunteers.js');
-
-  router.get('/success', (req, res) => {
+  
+router.get('/success', (req, res) => {
     res.send('success')
     console.log("it worked")
 })
@@ -36,31 +32,25 @@ const Volunteer = require('../../models/volunteers.js');
 //   }
 // ));
 
-passport.use(new LocalStrategy({
-    usernameField: '',
-    passwordField: ''
-},
-  function(username, password, done) {
-    Volunteer.findOne({ username: username }, function(err, user) {
-      if (err) { return done(err); }
-      if (!user) {
-        return done(null, false, { message: 'Incorrect username.' });
-      }
-      if (!user.validPassword(password)) {
-        return done(null, false, { message: 'Incorrect password.' });
-      }
-      return done(null, user);
-    });
-  }
-));
+// passport.use(new LocalStrategy({
+//     usernameField: '',
+//     passwordField: ''
+// },
+//   function(username, password, done) {
+//     Volunteer.findOne({ username: username }, function(err, user) {
+//       if (err) { return done(err); }
+//       if (!user) {
+//         return done(null, false, { message: 'Incorrect username.' });
+//       }
+//       if (!user.validPassword(password)) {
+//         return done(null, false, { message: 'Incorrect password.' });
+//       }
+//       return done(null, user);
+//     });
+//   }
+// ));
 
-passport.serializeUser(function(user, done) {
-  done(null, user);
-});
 
-passport.deserializeUser(function(user, done) {
-    done(null, user);
-});
 
 // router.post('/', (req, res, next) => {
 //   passport.authenticate('local',
@@ -84,10 +74,10 @@ passport.deserializeUser(function(user, done) {
 //   })(req, res, next);
 // });
 
-// router.post('/',
-//   passport.authenticate('local', { successRedirect: '/success',
-//                                    failureRedirect: '/'
-//                                    }))
+router.post('/',
+  passport.authenticate('local', { successRedirect: '/login/success',
+                                   failureRedirect: '/'
+                                   }))
   
 
 module.exports = router, passport;

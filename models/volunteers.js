@@ -3,20 +3,24 @@ const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 const { type } = require('jquery');
 
-class Volunteer extends Model {}
+class Volunteer extends Model {
+    checkPassword(loginPw) {
+        return bcrypt.compareSync(loginPw, this.password);
+      }
+}
 
 Volunteer.init(
     {
         id: {
             type: DataTypes.INTEGER,
-            allowNull: true,
+            allowNull: false,
             primaryKey: true,
             autoIncrement: true,
         },
 
         first_name: {
             type: DataTypes.STRING,
-            allowNull: true,
+            allowNull: false,
             validate: {
                 len: [2]
             }
@@ -24,7 +28,7 @@ Volunteer.init(
 
         last_name: {
             type: DataTypes.STRING,
-            allowNull: true,
+            allowNull: false,
             validate: {
                 len: [2]
             }
@@ -32,7 +36,7 @@ Volunteer.init(
 
         username: {
             type: DataTypes.STRING,
-            allowNull: true,
+            allowNull: false,
             validate: {
                 len: [4]
             }
@@ -40,7 +44,7 @@ Volunteer.init(
 
         email: {
             type: DataTypes.STRING,
-            allowNull: true,
+            allowNull: false,
             validate: {
                 len: [5]
             }
@@ -48,7 +52,7 @@ Volunteer.init(
 
         password: {
             type: DataTypes.STRING,
-            allowNull: true,
+            allowNull: false,
             validate: {
                 len: [4]
             }
@@ -56,31 +60,27 @@ Volunteer.init(
         
         languages: {
             type: DataTypes.STRING,
-            allowNull: true,
-            validate: {
-                len: [4]
-            }
+            allowNull: true
+            
+            
         },
 
         techKnowledge: {
             type: DataTypes.STRING,
-            allowNull: true,
-            validate: {
-                len: [5]
-            }
+            allowNull: true
+            
+            
         },
 
         specialKnowledge: {
             type: DataTypes.STRING,
-            allowNull: true,
-            validate: {
-                len: [5]
-            }
+            allowNull: true
+            
         },
 
         HoursPerWeek: {
             type: DataTypes.INTEGER,
-            allowNull: true,
+            allowNull: false,
             validate: {
                 len: [1]
             }
@@ -103,7 +103,7 @@ Volunteer.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'user'
+        modelName: 'volunteers'
       }
 )
 

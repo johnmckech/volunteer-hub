@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $("#register").click(function (){
-        // $("#registerID").css("display", "block");
+        $("#registerID").css("display", "block");
         $("#registerInfo").css("display", "block");
         $("#regButton").css("display", "block");
     });
