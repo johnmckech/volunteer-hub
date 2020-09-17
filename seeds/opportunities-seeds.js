@@ -17,15 +17,15 @@ const opportunityData = [
     },
     {
         opportunityName: 'Provide closed captioning for webinar',
-        languages: 'French'
+        languages: 'French',
         techKnowledge: 'Microsoft Word',
-        specialKnowledge: ,
+        specialKnowledge: '',
         hoursPerWeek: '5',
     },
     {
         opportunityName: 'Create website for small non-profit',
         languages: 'English',
-        techKnowledge: ,
+        techKnowledge: '',
         specialKnowledge: 'Web Development',
         hoursPerWeek: '10',
     },
@@ -33,7 +33,7 @@ const opportunityData = [
         opportunityName: 'Create social media for upcoming event',
         languages: 'English',
         techKnowledge: 'Facebook',
-        specialKnowledge: ,
+        specialKnowledge: '',
         hoursPerWeek: '5',
     },
     {

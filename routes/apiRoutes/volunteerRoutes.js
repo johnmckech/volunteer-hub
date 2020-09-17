@@ -130,7 +130,9 @@ router.put('/volunteer/:id', (req, res) => {
 });
 */
 router.put('/:id', (req, res) => {
+    
     Volunteer.update({
+        individualHooks: true,
         first_name: req.body.first_name,
         last_name: req.body.last_name,
         email: req.body.email,
